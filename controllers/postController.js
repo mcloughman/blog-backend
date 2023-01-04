@@ -7,7 +7,9 @@ const getPosts = async(req, res) => {
         // const posts = await Post.find({user_id}).sort({createdAt: -1}) 
         // All will be allowed to view posts
         const posts = await Post.find({}).sort({createdAt: -1})
-       
+        if(!posts) {
+            res.status(404).json({msg: "Posts not found"})
+        }
         res.status(200).json(posts)
     
 }
