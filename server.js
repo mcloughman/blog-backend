@@ -17,8 +17,9 @@ app.use((req, res, next) => {
 })
 
 // routes
-app.use('/api/posts', postRoutes)
-app.use('/api/user', userRoutes)
+// Need to take out the below lines. They are causing app to fail in heroku. I will implement full routes individually
+app.use(/*'/api/posts', */postRoutes)
+app.use(/*'/api/user', */userRoutes)
 
 mongoose.set('strictQuery', false)
 
