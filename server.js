@@ -25,10 +25,10 @@ mongoose.set('strictQuery', false)
 // connectt to db
 mongoose.connect(process.env.MONGO_URI)
     .then(() => {
-        console.log(process.env.MONGO_URI)
+        console.log("connected")
         // listen for requests
-        app.listen(process.env.PORT || 4000, () => {
-            console.log("Hi There")
+        app.listen(process.env.PORT, () => {
+            console.log("Listening")
         })
     })
     .catch((error) => {
