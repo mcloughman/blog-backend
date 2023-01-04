@@ -8,15 +8,15 @@ const router = express.Router();
 
 
 // GET all blogs
-router.get("/api/posts", getPosts)
+router.get("/", getPosts)
 // GET a single blog
-router.get("/api/posts/:id", getPost)
+router.get("/:id", getPost)
 
 // POST a new blog
-router.post("/api/posts", requireAuth, createPost)
+router.post("/", requireAuth, createPost)
 // DELETE a blog
-router.delete("/api/posts/:id", requireAuth, deletePost)
+router.delete("/:id", requireAuth, deletePost)
 // UPDATE a new blog
-router.patch("/api/posts/:id", requireAuth, updatePost)
+router.patch("/:id", requireAuth, updatePost)
 
 module.exports = router;    
