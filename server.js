@@ -12,10 +12,6 @@ const app = express()
 // middleware
 app.use(express.json()) // used to need body-parser
 app.use((req, res, next) => {
-    
-    next()
-})
-app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     next()
 })
