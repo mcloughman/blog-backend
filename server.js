@@ -15,11 +15,14 @@ app.use((req, res, next) => {
     
     next()
 })
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    next()
+})
 
 // routes
-// Need to take out the below lines. They are causing app to fail in heroku. I will implement full routes individually
-app.use(postRoutes)
-app.use(userRoutes)
+app.use('/api/posts', postRoutes)
+app.use('/api/user', userRoutes)
 
 mongoose.set('strictQuery', false)
 
